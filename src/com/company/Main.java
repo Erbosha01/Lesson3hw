@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         double[] numbers = {23.34, -54.34, -57.56, 76.5, 87.4, 898.7, -675.5, 689.7, 797.7, -45.6, 87.7, 34.8, -79.7, -90.6, 54.7};
+        System.out.println(Arrays.toString(numbers));
         double sum = 0;
         int all = 0;
         boolean isTrue = false;
@@ -16,6 +17,10 @@ public class Main {
                 sum = sum + elements;
             }
         }
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print(numbers[i]+" ");
+
+        }
         System.out.println(sum / all);
         min();
     }
@@ -24,9 +29,17 @@ public class Main {
 
     public static void min() {
         double[] numbers = {23.34, -54.34, -57.56, 76.5, 87.4, 898.7, -675.5, 689.7, 797.7, -45.6, 87.7, 34.8, -79.7, -90.6, 54.7};
-        Arrays.sort(numbers);
         for (int i = 0; i < numbers.length; i++) {
-            System.out.print(numbers[i] + " ");
+            double min = numbers[i];
+            for (int j = i; j < numbers.length; j++) {
+                if (min > numbers[j]) {
+                    double max = min;
+                    min = numbers[j];
+                    numbers[j] = max;
+                }
+            }
+            numbers[i] = min;
         }
+        System.out.println(Arrays.toString(numbers));
     }
 }
