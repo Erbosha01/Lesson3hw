@@ -5,7 +5,6 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         double[] numbers = {23.34, -54.34, -57.56, 76.5, 87.4, 898.7, -675.5, 689.7, 797.7, -45.6, 87.7, 34.8, -79.7, -90.6, 54.7};
-        System.out.println(Arrays.toString(numbers));
         double sum = 0;
         int all = 0;
         boolean isTrue = false;
@@ -21,7 +20,7 @@ public class Main {
             System.out.print(numbers[i]+" ");
 
         }
-        System.out.println(sum / all);
+        System.out.println("\nСреднее арифм = " + sum / all);
         min();
     }
 
